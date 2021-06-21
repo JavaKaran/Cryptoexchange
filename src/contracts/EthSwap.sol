@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.2 < 0.8.6;
+pragma solidity >=0.5.0;
 
 import "./Token.sol";
 
@@ -40,11 +40,12 @@ contract EthSwap {
     emit TokensPurchased(msg.sender, address(token), tokenAmount, rate);
   }
 
-  function sellTokens(address payable admin,uint _amount) public {
+  function sellTokens(uint _amount) public payable{
+    address payable seller;
+    seller == msg.sender;
     // User can't sell more tokens than they have
-     require(msg.sender == admin);
-
-    require(token.balanceOf(admin) >= _amount);
+  
+    require(token.balanceOf(seller) >= _amount);
 
     // Calculate the amount of Ether to redeem
     uint etherAmount = _amount / rate;
@@ -53,11 +54,11 @@ contract EthSwap {
     require(address(this).balance >= etherAmount);
 
     // Perform sale
-    token.transferFrom(admin, address(this), _amount);
-    admin.transfer(etherAmount);
+    token.transferFrom(seller, address(this), _amount);
+    seller.transfer(etherAmount);
 
     // Emit an event
-    emit TokensSold(admin, address(token), _amount, rate);
+    emit TokensSold(seller, address(token), _amount, rate);
   }
 
 }
