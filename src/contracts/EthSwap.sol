@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.5.0;
+pragma solidity >=0.6.0;
 
 import "./Token.sol";
 
 contract EthSwap {
   string public name = "EthSwap Instant Exchange";
+  address payable public seller ;
+  address public owner = msg.sender;
   Token public token;
   uint public rate = 100;
 
@@ -24,6 +26,7 @@ contract EthSwap {
 
   constructor(Token _token) public {
     token = _token;
+    seller = payable(owner);
   }
 
   function buyTokens() public payable {
@@ -41,8 +44,8 @@ contract EthSwap {
   }
 
   function sellTokens(uint _amount) public payable{
-    address payable seller;
-    seller == msg.sender;
+    
+    require(seller == owner);
     // User can't sell more tokens than they have
   
     require(token.balanceOf(seller) >= _amount);
