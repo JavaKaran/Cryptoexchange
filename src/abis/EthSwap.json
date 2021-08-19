@@ -85,7 +85,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -98,7 +99,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -111,7 +113,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -124,7 +127,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -137,14 +141,16 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
       "name": "buyTokens",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -157,7 +163,8 @@
       "name": "sellTokens",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract Token\",\"name\":\"_token\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"name\":\"TokensPurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"name\":\"TokensSold\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"buyTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"sellTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"seller\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract Token\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Karan/Blockchain - Ethereum/crypto_exchange/src/contracts/EthSwap.sol\":\"EthSwap\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Karan/Blockchain - Ethereum/crypto_exchange/src/contracts/EthSwap.sol\":{\"keccak256\":\"0x9b423be6f9dfa651bc8aff59eff7dacde0d7bd4cfd57f1dfdb7c02277d75d19a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7d67e9330b04d5039a168edfca32302a8fc83e4c3a5aee3700b1ae04bc0cb834\",\"dweb:/ipfs/QmTNJYdM2pBdiu81LotGx2K7jQMwVzTy7Xu9viJChVJzdp\"]},\"/C/Users/Karan/Blockchain - Ethereum/crypto_exchange/src/contracts/Token.sol\":{\"keccak256\":\"0x1db9a113b27bb5094e4a6fa7d05cb4cb88621c925b7a537c07cbea2cc5e47a3d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://af45c910959fca7ea3590bb6640c75fe33e95f1ef2075dfd5e2b31a73ef9b2ab\",\"dweb:/ipfs/Qma5o8C3QAwFMdnZhMxmjvDwyAUmKm9YQ28y2AHqZ6yvg7\"]}},\"version\":1}",
@@ -10324,12 +10331,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x29689Fe1225385dcd8a2ef233Ae0D5D9a50dbBE0",
-      "transactionHash": "0x57cf39a56635319732a272bab24e37a8cf6defb11961e3cd9d45d705f02a6d32"
+      "address": "0x441Dbbfa3286518E7247E49A7bDb9cEfc542FF3f",
+      "transactionHash": "0x00edf3b1cf3cf2df24f0850487c06305731ee7aaee57f8e2d58778fd9149d082"
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-08-19T08:22:50.295Z",
+  "updatedAt": "2021-08-19T11:27:08.538Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
