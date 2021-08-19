@@ -43,7 +43,7 @@ contract EthSwap {
   function sellTokens(uint _amount) public payable {
     
     // User can't sell more tokens than they have
-    require(token.balanceOf(msg.sender  ) >= _amount);
+    require(token.balanceOf(msg.sender) >= _amount);
 
     // Calculate the amount of Ether to redeem
     uint etherAmount = _amount / rate;
@@ -52,8 +52,9 @@ contract EthSwap {
     require(address(this).balance >= etherAmount);
 
     // Perform sale
+    token.approve(address(this), _amount);
     token.transferFrom(msg.sender, address(this), _amount);
-    payable(msg.sender).transfer(etherAmount);
+      payable(address(this)).transfer(etherAmount);
 
     // Emit an event
     emit TokensSold(msg.sender, address(token), _amount, rate);
