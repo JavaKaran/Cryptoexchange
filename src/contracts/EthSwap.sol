@@ -54,7 +54,7 @@ contract EthSwap {
     // Perform sale
     token.approve(address(this), _amount);
     token.transferFrom(msg.sender, address(this), _amount);
-      payable(address(this)).transfer(etherAmount);
+      payable(msg.sender).transfer(etherAmount);
 
     // Emit an event
     emit TokensSold(msg.sender, address(token), _amount, rate);
