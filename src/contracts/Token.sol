@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.6.0;
+pragma solidity ^0.8.0;
 
 contract Token {
     string  public name = "KS Token";
@@ -22,7 +22,7 @@ contract Token {
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
 
-    constructor() public {
+    constructor()  {
         balanceOf[msg.sender] = totalSupply;
     }
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.6.0;
+pragma solidity ^0.8.0;
 
 import "./Token.sol";
 
@@ -24,7 +24,7 @@ contract EthSwap {
     uint rate
   );
 
-  constructor(Token _token) public {
+  constructor(Token _token)  {
     token = _token;
     seller = payable(owner);
   }
@@ -43,7 +43,7 @@ contract EthSwap {
     emit TokensPurchased(msg.sender, address(token), tokenAmount, rate);
   }
 
-  function sellTokens(uint _amount) public payable{
+  function sellTokens(uint _amount) public payable {
     
     require(seller == owner);
     // User can't sell more tokens than they have
