@@ -40,7 +40,7 @@ contract EthSwap {
     emit TokensPurchased(msg.sender, address(token), tokenAmount, rate);
   }
 
-  function sellTokens(uint _amount) public payable {
+  function sellTokens(uint _amount) public {
     
     // User can't sell more tokens than they have
     require(token.balanceOf(msg.sender) >= _amount);
@@ -50,6 +50,9 @@ contract EthSwap {
 
     // Require that EthSwap has enough Ether
     require(address(this).balance >= etherAmount);
+
+    uint256 allowance = token.allowance(msg.sender, address(this)); 
+    require(allowance >= _amount, "check the token allowance");
 
     // Perform sale
     token.approve(address(this), _amount);
